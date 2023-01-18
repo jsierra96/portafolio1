@@ -29,7 +29,7 @@ body {
 
 .hero {
     height: 100vh;
-    background-image: var(--background), url(../img/paige-cody-ITTqjS3UpoY-unsplash.jpg);
+    background-image: var(--background), url(../img/header3.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -110,7 +110,7 @@ body {
     border-radius: 50%;
     margin-bottom: 10px;
     object-fit: cover;
-    object-position: top;
+    object-position: center;
 }
 .presentation__copy {
     width: 100%;
@@ -156,8 +156,10 @@ body {
 }
 .projects__grid {
     display: grid;
-    height: 500px;
-    grid-template-areas: "img1 img1 img2 img3" "img1 img1 img4 img5";
+    height: 550px;
+    grid-template-areas: 
+    "img1 img1 img2 img3"
+    "img1 img1 img4 img5";
     gap: 10px;
 }
 .projects__item {
@@ -166,7 +168,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
-.projects__img{
+.projects_img {
     width: 100%;
     height: 100%;
     object-fit: cover;

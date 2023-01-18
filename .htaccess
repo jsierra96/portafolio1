@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+
+    #Activar rewrite
+    RewriteEngine On
+    Options All -Indexes
+
+    #Header set Content-Security-Policy "default-src * http://mi.dominio/; img-src * 'self' data: http://mi.dominio/; style-src http://mi.dominio/;"
+    Header set Access-Control-Allow-Origin "*"
+    Header append X-Frame-Options: "SAMEORIGIN"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    #Header always set Strict-Transport-Security max-age=31536000
+    #Header set Expect-CT "enforce, max-age=0, report-uri='http://mi.dominio/'"
+
+    RewriteCond %{REQUEST_FILENAME} !-f 
+    RewriteCond %{REQUEST_FILENAME} !-d
+    #RewriteRule ^([a-zA-Z0-9*]+)/(.*)$ index.php/$1 [L,QSA]
+    RewriteRule ^(.*)$ index.php?router=$1 [L,QSA] 
+
+    ErrorDocument 404 http://php81.jsierra.test/portafolio.jsierra/404
+    ErrorDocument 403 http://php81.jsierra.test/portafolio.jsierra/403
+    ErrorDocument 500 http://php81.jsierra.test/portafolio.jsierra/500
+
+</IfModule>
